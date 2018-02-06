@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-package jsonrpc
+package jsonrpcx
 
 import (
-	"backend/rpc"
+	"gopher/jsonrpcx/rpc"
 	"encoding/binary"
 	"encoding/json"
 	"errors"

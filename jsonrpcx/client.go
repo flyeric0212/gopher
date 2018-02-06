@@ -4,10 +4,10 @@
 
 // Package jsonrpc implements a JSON-RPC ClientCodec and ServerCodec
 // for the rpc package.
-package jsonrpc
+package jsonrpcx
 
 import (
-	"backend/rpc"
+	"gopher/jsonrpcx/rpc"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"

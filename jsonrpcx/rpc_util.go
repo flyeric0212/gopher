@@ -1,8 +1,7 @@
-package jsonrpc
+package jsonrpcx
 
 import (
-	"backend/jsonrpc"
-	"backend/rpc"
+	"gopher/jsonrpcx/rpc"
 	"net"
 	"time"
 )
@@ -39,8 +38,8 @@ func NewRpcClient(addr, net string, func_map map[string]string, name string,
 	client.name = name
 	client.logger = logger
 	//client.pool = rpc.NewPool(client.Connect, 100, 100, 1000*time.Second, true)
-	client.poolCluster = rpc.NewRpcClusterClient(jsonrpc.NewClient, addr, logger, 2*time.Second, RetryTime)
-
+	//client.poolCluster = rpc.NewRpcClusterClient(jsonrpc.NewClient, addr, logger, 2*time.Second, RetryTime)
+	client.poolCluster = rpc.NewRpcClusterClient(NewClient, addr, logger, 2*time.Second, RetryTime)
 	return client, err
 }
 
@@ -53,7 +52,8 @@ func (client *RpcClient) Connect() (*rpc.Client, error) {
 		return nil, err
 	}
 
-	rpc_client := jsonrpc.NewClient(conn)
+	//rpc_client := jsonrpc.NewClient(conn)
+	rpc_client := NewClient(conn)
 
 	return rpc_client, nil
 }
