@@ -61,7 +61,7 @@ func (client *RpcClient) Connect() (*rpc.Client, error) {
 func (client *RpcClient) Call(method string, args interface{}, reply interface{}) error {
 	var err error
 	if nil != client.logger {
-		client.logger.Debug("call rpc : %s, %v", method, args)
+		client.logger.Debug("call rpc: %s, %v", method, args)
 	}
 
 	err = client.poolCluster.CallTimeout(client.func_map[method], args, reply)
