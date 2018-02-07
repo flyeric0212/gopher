@@ -106,7 +106,7 @@ func main() {
 
 				d[i] = append(d[i], t)
 
-				if err == nil && *reply.Field1 == "OK" {
+				if err == nil && reply.Field1 == "OK" {
 					atomic.AddUint64(&transOK, 1)
 				}
 

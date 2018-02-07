@@ -4,7 +4,6 @@ package main;
 
 option optimize_for = SPEED;
 
-
 message BenchmarkMessage {
   required string field1 = 1;
   optional string field9 = 9;

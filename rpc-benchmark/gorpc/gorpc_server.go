@@ -21,7 +21,6 @@ import (
 
 var (
 	host       = flag.String("s", "127.0.0.1:8972", "listened ip and port")
-	cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
 	delay      = flag.Duration("delay", 0, "delay to mock business processing")
 	debugAddr  = flag.String("d", "127.0.0.1:9981", "server ip and port")
 )
@@ -59,8 +58,8 @@ func serveConn(server *rpc.Server, conn io.ReadWriteCloser) {
 type Hello int
 
 func (t *Hello) Say(args *BenchmarkMessage, reply *BenchmarkMessage) error {
-	*args.Field1 = "OK"
-	*args.Field2 = 100
+	args.Field1 = "OK"
+	args.Field2 = 100
 	*reply = *args
 	if *delay > 0 {
 		time.Sleep(*delay)
