@@ -6,7 +6,7 @@ message: 600 bytes 左右
 
 0ms delay   100 clients  1000000 requests
 
-TPS: 约40000
+TPS: 约44000
 total: 23s左右
 
 
@@ -22,8 +22,8 @@ cpu占用高
 
 0ms delay   100 clients  1000000 requests
 
-TPS: 约31000
-total: 30s左右
+TPS: 约36000
+total: 27s左右
 
 
 jsonrpcx:
