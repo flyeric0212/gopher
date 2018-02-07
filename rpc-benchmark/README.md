@@ -10,14 +10,6 @@ TPS: 约44000
 total: 23s左右
 
 
-**grpc:**
-
-0ms delay   100 clients  1000000 requests
-
-TPS: 约12000
-total: 70 ~ 80s
-cpu占用高
-
 **rpcx:**
 
 0ms delay   100 clients  1000000 requests
@@ -26,4 +18,17 @@ TPS: 约36000
 total: 27s左右
 
 
-jsonrpcx:
+**grpc:**
+
+0ms delay   100 clients  1000000 requests
+
+TPS: 约12000
+total: 70 ~ 80s
+
+
+**jsonrpc:**
+
+0ms delay   100 clients  1000000 requests
+
+TPS: 约12000
+total: 80s左右
