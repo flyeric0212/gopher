@@ -7,7 +7,7 @@ message: 600 bytes 左右
 0ms delay   100 clients  1000000 requests
 
 TPS: 约40000
-total: 20s ~ 30s
+total: 23s左右
 
 
 **grpc:**
@@ -18,7 +18,12 @@ TPS: 约12000
 total: 70 ~ 80s
 cpu占用高
 
+**rpcx:**
 
+0ms delay   100 clients  1000000 requests
+
+TPS: 约31000
+total: 30s左右
 
 
 jsonrpcx:
