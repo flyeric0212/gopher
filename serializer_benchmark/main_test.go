@@ -13,6 +13,7 @@ import (
 	"log"
 	"encoding/json"
 	msgpackv2 "github.com/vmihailenco/msgpack"
+	"encoding/xml"
 )
 
 var group = ColorGroup{
@@ -39,11 +40,17 @@ func TestMarshaledDataLen(t *testing.T) {
 	buf, _ := json.Marshal(group)
 	t.Logf("json:\t\t\t\t %d bytes", len(buf))
 
+	buf, _ = xml.Marshal(group)
+	t.Logf("xml:\t\t\t\t %d bytes", len(buf))
+
 	buf, _ = proto.Marshal(&protobufGroup)
 	t.Logf("protobuf:\t\t\t\t %d bytes", len(buf))
 
 	buf, _ = goproto.Marshal(&gogoProtobufGroup)
 	t.Logf("gogoprotobuf:\t\t\t %d bytes", len(buf))
+
+	buf, _ = group.MarshalMsg(nil)
+	t.Logf("msgp:\t\t\t\t %d bytes", len(buf))
 
 	buf, _  = msgpackv2.Marshal(&group)
 	t.Logf("msgpack:\t\t\t %d bytes", len(buf))
@@ -61,6 +68,20 @@ func BenchmarkUnmarshalByJson(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		json.Unmarshal(bytes, &result)
+	}
+}
+
+func BenchmarkMarshalByXml(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		xml.Marshal(group)
+	}
+}
+func BenchmarkUnmarshalByXml(b *testing.B) {
+	bytes, _ := xml.Marshal(group)
+	result := ColorGroup{}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		xml.Unmarshal(bytes, &result)
 	}
 }
 
@@ -89,6 +110,20 @@ func BenchmarkUnmarshalByGogoProtoBuf(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		goproto.Unmarshal(bytes, &result)
+	}
+}
+
+func BenchmarkMarshalByMsgp(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		group.MarshalMsg(nil)
+	}
+}
+func BenchmarkUnmarshalByMsgp(b *testing.B) {
+	bytes, _ := group.MarshalMsg(nil)
+	result := ColorGroup{}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		result.UnmarshalMsg(bytes)
 	}
 }
 
