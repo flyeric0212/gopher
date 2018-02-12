@@ -1,0 +1,41 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "2UmMbNHc8FBr98mJFN1k8ISOIHk=",
+			"path": "github.com/garyburd/redigo/internal",
+			"revision": "57f1cd7de6175c96b423e7ac2534ff2b39e2ef79",
+			"revisionTime": "2017-06-15T18:53:09Z"
+		},
+		{
+			"checksumSHA1": "dGCqjUjHaREgF/BM+u0UdebD4fk=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "57f1cd7de6175c96b423e7ac2534ff2b39e2ef79",
+			"revisionTime": "2017-06-15T18:53:09Z"
+		},
+		{
+			"checksumSHA1": "ddHQ3AbnzgLL4tpi6FEEWArLCIk=",
+			"path": "github.com/vmihailenco/msgpack",
+			"revision": "d91c9f43689d8565046de42f51a19bb80ebb8360",
+			"revisionTime": "2017-06-22T07:12:44Z"
+		},
+		{
+			"checksumSHA1": "tOMrkwvdZiNeJDeT/Cjuo7fCpg0=",
+			"path": "github.com/vmihailenco/msgpack/codes",
+			"revision": "d91c9f43689d8565046de42f51a19bb80ebb8360",
+			"revisionTime": "2017-06-22T07:12:44Z"
+		},
+		{
+			"path": "google.golang.org/appengine/datastore",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "WNjUTH01NMhPWjpwnsaL3SW52Gw=",
+			"path": "gopkg.in/ini.v1",
+			"revision": "d3de07a94d22b4a0972deb4b96d790c2c0ce8333",
+			"revisionTime": "2017-06-02T20:46:24Z"
+		}
+	],
+	"rootPath": "github.com/ouqiang/delay-queue"
+}
