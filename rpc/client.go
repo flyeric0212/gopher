@@ -319,6 +319,7 @@ func (client *Client) Call(serviceMethod string, args interface{}, reply interfa
 	return call.Error
 }
 
+// ===================== add ============================
 var errTimeout = fmt.Errorf("timeout error")
 
 func (client *Client) GoTimeout(serviceMethod string, args interface{}, reply interface{}, done chan *Call, timeout time.Duration) *Call {

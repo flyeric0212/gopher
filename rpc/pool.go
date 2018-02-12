@@ -11,27 +11,17 @@ import (
 	"time"
 )
 
-var (
-	errPoolClosed = errors.New("rpc: connection pool closed")
-	errConnClosed = errors.New("rpc: connection closed")
-)
-
 type Pool struct {
-	MaxIdle int
-
-	MaxActive int
-
+	MaxIdle     int
+	MaxActive   int
 	Wait        bool
 	IdleTimeout time.Duration
 	Dial        func() (*Client, error)
-	// mu protects fields defined below.
-	mu     sync.Mutex
-	cond   *sync.Cond
-	closed bool
-	active int
-
-	// Stack of idleConn with most recently used at the front.
-	idle list.List
+	mu          sync.Mutex // mu protects fields defined below.
+	cond        *sync.Cond
+	closed      bool
+	active      int
+	idle        list.List // Stack of idleConn with most recently used at the front.
 }
 
 func NewPool(dial func() (*Client, error), maxIdle, maxActive int, idelTimeout time.Duration, wait bool) *Pool {
@@ -120,7 +110,6 @@ func (p *Pool) get() (*Client, error) {
 		if p.cond == nil {
 			p.cond = sync.NewCond(&p.mu)
 		}
-		// fmt.Println("rpc conn pool, time: ", time.Now().Local())
 		p.cond.Wait()
 	}
 
