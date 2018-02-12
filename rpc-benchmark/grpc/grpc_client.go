@@ -14,9 +14,9 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/montanaflynn/stats"
-	"log"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"log"
 )
 
 var concurrency = flag.Int("c", 1, "concurrency")

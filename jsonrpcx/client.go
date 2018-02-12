@@ -7,10 +7,10 @@
 package jsonrpcx
 
 import (
-	"gopher/jsonrpcx/rpc"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
+	"gopher/jsonrpcx/rpc"
 	"io"
 	"net"
 	"sync"

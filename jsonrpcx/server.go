@@ -5,10 +5,10 @@
 package jsonrpcx
 
 import (
-	"gopher/jsonrpcx/rpc"
 	"encoding/binary"
 	"encoding/json"
 	"errors"
+	"gopher/jsonrpcx/rpc"
 	"io"
 	"sync"
 )

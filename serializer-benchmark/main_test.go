@@ -9,11 +9,11 @@ import (
 	goproto "github.com/gogo/protobuf/proto"
 	"github.com/golang/protobuf/proto"
 
-	"testing"
-	"log"
 	"encoding/json"
-	msgpackv2 "github.com/vmihailenco/msgpack"
 	"encoding/xml"
+	msgpackv2 "github.com/vmihailenco/msgpack"
+	"log"
+	"testing"
 )
 
 var group = ColorGroup{
@@ -52,7 +52,7 @@ func TestMarshaledDataLen(t *testing.T) {
 	buf, _ = group.MarshalMsg(nil)
 	t.Logf("msgp:\t\t\t\t %d bytes", len(buf))
 
-	buf, _  = msgpackv2.Marshal(&group)
+	buf, _ = msgpackv2.Marshal(&group)
 	t.Logf("msgpack:\t\t\t %d bytes", len(buf))
 
 }

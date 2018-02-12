@@ -33,9 +33,9 @@ func (t *Hello) Say(ctx context.Context, args *BenchmarkMessage, reply *Benchmar
 }
 
 var (
-	host       = flag.String("s", "127.0.0.1:8974", "listened ip and port")
-	delay      = flag.Duration("delay", 0, "delay to mock business processing")
-	debugAddr  = flag.String("d", "127.0.0.1:9984", "server ip and port")
+	host      = flag.String("s", "127.0.0.1:8974", "listened ip and port")
+	delay     = flag.Duration("delay", 0, "delay to mock business processing")
+	debugAddr = flag.String("d", "127.0.0.1:9984", "server ip and port")
 )
 
 func main() {

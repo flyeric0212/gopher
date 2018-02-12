@@ -145,7 +145,7 @@ func (p *Pool) put(c *Client, err error) error {
 		return nil
 	}
 
-	if (nil != err && (isNetError(err))||isTimeoutError(err)) || c.closing || c.shutdown || p.idle.Len() >= p.MaxIdle {
+	if (nil != err && (isNetError(err)) || isTimeoutError(err)) || c.closing || c.shutdown || p.idle.Len() >= p.MaxIdle {
 		c.Close()
 		p.release()
 		if nil != p.cond {

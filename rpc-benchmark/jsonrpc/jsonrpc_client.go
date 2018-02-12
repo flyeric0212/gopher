@@ -202,4 +202,3 @@ func prepareArgs() *BenchmarkMessage {
 	}
 	return &args
 }
-

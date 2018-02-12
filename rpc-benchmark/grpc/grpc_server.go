@@ -6,13 +6,13 @@
 package main
 
 import (
-	"time"
 	"flag"
 	"golang.org/x/net/context"
-	"runtime"
-	"net"
-	"log"
 	"google.golang.org/grpc"
+	"log"
+	"net"
+	"runtime"
+	"time"
 )
 
 type Hello struct{}

@@ -7,9 +7,9 @@ package main
 
 import (
 	"fmt"
-	"time"
-	"runtime"
 	"gopher/grpool"
+	"runtime"
+	"time"
 )
 
 func main() {

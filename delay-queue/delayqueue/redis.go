@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/garyburd/redigo/redis"
 	"blast/push_server/sdk/delay-queue/config"
+	"github.com/garyburd/redigo/redis"
 )
 
 var (
@@ -92,4 +92,3 @@ func HGetAll(key string) (interface{}, error) {
 func GetStringMap(key string) (map[string]string, error) {
 	return redis.StringMap(execRedisCommand("HGETALL", key))
 }
-
