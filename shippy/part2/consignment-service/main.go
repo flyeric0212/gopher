@@ -68,7 +68,6 @@ func (s *service) CreateConsignment(ctx context.Context, req *pb.Consignment, re
 	log.Printf("found vessel: %s\n", vResp.Vessel.Name)
 	req.VesselId = vResp.Vessel.Id
 
-
 	consignment, err := s.repo.Create(req)
 	if err != nil {
 		return err
