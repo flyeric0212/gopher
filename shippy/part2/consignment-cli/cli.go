@@ -6,7 +6,7 @@
 package main
 
 import (
-	pb "gopher/shippy/feature2/consignment-service/proto/consignment"
+	pb "gopher/shippy/part2/consignment-service/proto/consignment"
 	"io/ioutil"
 	"encoding/json"
 	"errors"

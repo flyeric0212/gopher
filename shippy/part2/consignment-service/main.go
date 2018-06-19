@@ -6,7 +6,7 @@
 package main
 
 import (
-	pb "gopher/shippy/feature2/consignment-service/proto/consignment"
+	pb "gopher/shippy/part2/consignment-service/proto/consignment"
 	"context"
 	"log"
 	"github.com/micro/go-micro"

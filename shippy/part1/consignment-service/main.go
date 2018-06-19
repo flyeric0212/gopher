@@ -6,7 +6,7 @@
 package main
 
 import (
-	pb "gopher/shippy/feature1/consignment-service/proto/consignment"
+	pb "gopher/shippy/part1/consignment-service/proto/consignment"
 	"context"
 	"net"
 	"log"
